@@ -2,20 +2,14 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 
-// Get base path from environment variable for GitHub Pages
-// If GITHUB_REPOSITORY is set, use the repo name as base path
-// Otherwise, use empty string for local development
-const getBasePath = () => {
-  if (process.env.GITHUB_REPOSITORY) {
-    const repoName = process.env.GITHUB_REPOSITORY.split('/')[1];
-    return `/${repoName}/`;
-  }
-  // For GitHub Pages, you can also set this manually via VITE_BASE_PATH
-  return process.env.VITE_BASE_PATH || '/';
-};
+// Base path for GitHub Pages
+// Set this to your repository name (e.g., '/Reem-Travel/')
+// Leave as '/' if deploying to username.github.io (user/organization page)
+// Or set via environment variable: VITE_BASE_PATH
+const basePath = process.env.VITE_BASE_PATH || '/';
 
 export default defineConfig({
-  base: getBasePath(),
+  base: basePath,
   plugins: [
     react(),
   ],
