@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { MapPin, Phone, Mail, Send, QrCode } from "lucide-react";
 import { useCreateContactMessage, type ContactInput } from "@/hooks/use-contact";
 import { z } from "zod";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,15 +19,16 @@ import {
 } from "@/components/ui/form";
 import { Card, CardContent } from "@/components/ui/card";
 
-const contactFormSchema = z.object({
-  name: z.string().min(1, "الاسم مطلوب"),
-  email: z.string().email("يرجى إدخال بريد إلكتروني صحيح"),
-  phone: z.string().optional(),
-  message: z.string().min(1, "الرسالة مطلوبة"),
-});
-
 export default function Contact() {
+  const { t } = useLanguage();
   const mutation = useCreateContactMessage();
+
+  const contactFormSchema = z.object({
+    name: z.string().min(1, t.contact.form.nameRequired),
+    email: z.string().email(t.contact.form.emailInvalid),
+    phone: z.string().optional(),
+    message: z.string().min(1, t.contact.form.messageRequired),
+  });
 
   const form = useForm<ContactInput>({
     resolver: zodResolver(contactFormSchema),
@@ -53,7 +55,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-primary font-bold tracking-wide uppercase text-sm mb-3"
           >
-            نحن هنا لخدمتك
+            {t.contact.badge}
           </motion.h2>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
@@ -62,7 +64,7 @@ export default function Contact() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl font-bold mb-6"
           >
-            تواصل معنا الآن
+            {t.contact.title}
           </motion.h3>
         </div>
 
@@ -76,15 +78,15 @@ export default function Contact() {
             className="lg:col-span-2 space-y-8"
           >
             <div className="space-y-6">
-              <h4 className="text-2xl font-bold mb-4">معلومات الاتصال</h4>
+              <h4 className="text-2xl font-bold mb-4">{t.contact.contactInfo}</h4>
               
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center shrink-0">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h5 className="font-semibold text-lg">العنوان</h5>
-                  <p className="text-muted-foreground mt-1">طرابلس، جبل البداوي<br/>شارع الأحباش بالقرب من تعاونية دانا</p>
+                  <h5 className="font-semibold text-lg">{t.contact.address}</h5>
+                  <p className="text-muted-foreground mt-1 whitespace-pre-line">{t.contact.addressValue}</p>
                 </div>
               </div>
 
@@ -93,7 +95,7 @@ export default function Contact() {
                   <Phone className="w-6 h-6 flip-icon" />
                 </div>
                 <div>
-                  <h5 className="font-semibold text-lg">الهاتف</h5>
+                  <h5 className="font-semibold text-lg">{t.contact.phone}</h5>
                   <p className="text-muted-foreground mt-1" dir="ltr">+961 81 821 751</p>
                 </div>
               </div>
@@ -103,7 +105,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h5 className="font-semibold text-lg">البريد الإلكتروني</h5>
+                  <h5 className="font-semibold text-lg">{t.contact.email}</h5>
                   <p className="text-muted-foreground mt-1">info@reemtravel.com</p>
                 </div>
               </div>
@@ -114,8 +116,8 @@ export default function Contact() {
                 <div className="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <QrCode className="w-8 h-8" />
                 </div>
-                <h5 className="font-bold text-lg mb-2">Scan & Contact Us</h5>
-                <p className="text-sm text-muted-foreground mb-4">امسح الرمز للتواصل المباشر معنا عبر الواتساب</p>
+                <h5 className="font-bold text-lg mb-2">{t.contact.qr.title}</h5>
+                <p className="text-sm text-muted-foreground mb-4">{t.contact.qr.description}</p>
                 <div className="bg-white p-4 rounded-xl inline-block shadow-inner border">
                   <img 
                     src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/96181821751`} 
@@ -136,7 +138,7 @@ export default function Contact() {
           >
             <Card className="shadow-xl border-none">
               <CardContent className="p-8">
-                <h4 className="text-2xl font-bold mb-6">أرسل لنا رسالة</h4>
+                <h4 className="text-2xl font-bold mb-6">{t.contact.sendMessage}</h4>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -145,9 +147,9 @@ export default function Contact() {
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-base font-semibold">الاسم الكامل</FormLabel>
+                            <FormLabel className="text-base font-semibold">{t.contact.form.name}</FormLabel>
                             <FormControl>
-                              <Input placeholder="أدخل اسمك" className="bg-muted/50 h-12 rounded-xl" {...field} />
+                              <Input placeholder={t.contact.form.namePlaceholder} className="bg-muted/50 h-12 rounded-xl" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -158,9 +160,9 @@ export default function Contact() {
                         name="phone"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-base font-semibold">رقم الهاتف</FormLabel>
+                            <FormLabel className="text-base font-semibold">{t.contact.form.phone}</FormLabel>
                             <FormControl>
-                              <Input placeholder="أدخل رقمك" className="bg-muted/50 h-12 rounded-xl" {...field} />
+                              <Input placeholder={t.contact.form.phonePlaceholder} className="bg-muted/50 h-12 rounded-xl" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -173,9 +175,9 @@ export default function Contact() {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base font-semibold">البريد الإلكتروني</FormLabel>
+                          <FormLabel className="text-base font-semibold">{t.contact.form.email}</FormLabel>
                           <FormControl>
-                            <Input placeholder="أدخل بريدك الإلكتروني" className="bg-muted/50 h-12 rounded-xl" {...field} />
+                            <Input placeholder={t.contact.form.emailPlaceholder} className="bg-muted/50 h-12 rounded-xl" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -187,10 +189,10 @@ export default function Contact() {
                       name="message"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-base font-semibold">الرسالة</FormLabel>
+                          <FormLabel className="text-base font-semibold">{t.contact.form.message}</FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="كيف يمكننا مساعدتك؟" 
+                              placeholder={t.contact.form.messagePlaceholder} 
                               className="bg-muted/50 min-h-[150px] rounded-xl resize-none" 
                               {...field} 
                             />
@@ -206,10 +208,10 @@ export default function Contact() {
                       className="w-full rounded-xl h-14 text-lg font-bold shadow-lg shadow-primary/25 hover:-translate-y-1 transition-all"
                       disabled={mutation.isPending}
                     >
-                      {mutation.isPending ? "جاري الإرسال..." : (
+                      {mutation.isPending ? t.contact.form.sending : (
                         <>
                           <Send className="w-5 h-5 ml-2 flip-icon" />
-                          إرسال الرسالة
+                          {t.contact.form.send}
                         </>
                       )}
                     </Button>

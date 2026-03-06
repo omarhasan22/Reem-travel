@@ -1,39 +1,41 @@
 import { motion } from "framer-motion";
 import { Clock, Tag, FileCheck2, Building2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-
-const features = [
-  {
-    icon: Clock,
-    title: "متابعة 24/24",
-    description: "اتصل بنا بأي وقت. فريقنا متواجد دائماً للرد على استفساراتك ومتابعة رحلتك خطوة بخطوة.",
-    color: "text-blue-500",
-    bg: "bg-blue-50",
-  },
-  {
-    icon: Tag,
-    title: "أسعار مناسبة",
-    description: "سفر مضمون بسعر مناسب. نحرص دائماً على تقديم أفضل العروض والخيارات الاقتصادية.",
-    color: "text-green-500",
-    bg: "bg-green-50",
-  },
-  {
-    icon: FileCheck2,
-    title: "خبرة في التأشيرات",
-    description: "خبرة خاصة في معاملات التأشيرات للفلسطينيين، السوريين، واللبنانيين لمختلف الوجهات.",
-    color: "text-purple-500",
-    bg: "bg-purple-50",
-  },
-  {
-    icon: Building2,
-    title: "المكتب الوحيد في البداوي",
-    description: "بخدمتكم بكل فخر واستعداد. نوفر عليكم عناء التنقل بوجودنا بالقرب منكم.",
-    color: "text-orange-500",
-    bg: "bg-orange-50",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function WhyUs() {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: Clock,
+      title: t.whyUs.features.support.title,
+      description: t.whyUs.features.support.description,
+      color: "text-blue-500",
+      bg: "bg-blue-50",
+    },
+    {
+      icon: Tag,
+      title: t.whyUs.features.prices.title,
+      description: t.whyUs.features.prices.description,
+      color: "text-green-500",
+      bg: "bg-green-50",
+    },
+    {
+      icon: FileCheck2,
+      title: t.whyUs.features.visas.title,
+      description: t.whyUs.features.visas.description,
+      color: "text-purple-500",
+      bg: "bg-purple-50",
+    },
+    {
+      icon: Building2,
+      title: t.whyUs.features.location.title,
+      description: t.whyUs.features.location.description,
+      color: "text-orange-500",
+      bg: "bg-orange-50",
+    },
+  ];
   return (
     <section id="about" className="py-24 bg-background relative overflow-hidden">
       {/* Decorative Blob */}
@@ -47,7 +49,7 @@ export default function WhyUs() {
             viewport={{ once: true }}
             className="text-primary font-bold tracking-wide uppercase text-sm mb-3"
           >
-            لماذا ريم ترافل؟
+            {t.whyUs.badge}
           </motion.h2>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
@@ -56,7 +58,7 @@ export default function WhyUs() {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-4xl font-bold mb-6"
           >
-            نحن أكثر من مجرد مكتب سفر
+            {t.whyUs.title}
           </motion.h3>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -65,7 +67,7 @@ export default function WhyUs() {
             transition={{ delay: 0.2 }}
             className="text-lg text-muted-foreground"
           >
-            نحن شركائكم في كل رحلة... نفهم احتياجاتكم لأننا جزء منكم. خطط لسفرتك القادمة معنا واستمتع بتجربة لا تنسى.
+            {t.whyUs.description}
           </motion.p>
         </div>
 

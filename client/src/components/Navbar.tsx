@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, PhoneCall } from "lucide-react";
+import { Menu, X, PhoneCall, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logoImage from "@assets/logo.jpeg";
 
 export default function Navbar() {
+  const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -25,10 +33,10 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { name: "الرئيسية", id: "home" },
-    { name: "لماذا نحن", id: "about" },
-    { name: "خدماتنا", id: "services" },
-    { name: "اتصل بنا", id: "contact" },
+    { name: t.nav.home, id: "home" },
+    { name: t.nav.about, id: "about" },
+    { name: t.nav.services, id: "services" },
+    { name: t.nav.contact, id: "contact" },
   ];
 
   return (
@@ -50,7 +58,9 @@ export default function Navbar() {
           />
           <div className="flex flex-col">
             <span className="font-brand font-bold text-2xl leading-none text-foreground tracking-tight">Reem Travel</span>
-            <span className="text-[10px] text-muted-foreground leading-none font-semibold">للسياحة والسفر</span>
+            <span className="text-[10px] text-muted-foreground leading-none font-semibold">
+              {t.nav.tagline}
+            </span>
           </div>
         </div>
 
@@ -70,12 +80,39 @@ export default function Navbar() {
 
         {/* Action Button & Mobile Toggle */}
         <div className="flex items-center gap-4">
+          {/* Language Toggle */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full hover:bg-primary/10"
+              >
+                <Languages className="w-5 h-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align={language === 'ar' ? 'start' : 'end'}>
+              <DropdownMenuItem
+                onClick={() => setLanguage('ar')}
+                className={language === 'ar' ? 'bg-primary/10' : ''}
+              >
+                العربية
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => setLanguage('en')}
+                className={language === 'en' ? 'bg-primary/10' : ''}
+              >
+                English
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Button 
             onClick={() => scrollTo("contact")}
             className="hidden md:flex gap-2 rounded-full px-6 shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all"
           >
             <PhoneCall className="w-4 h-4" />
-            <span>تواصل معنا</span>
+            <span>{t.nav.contactUs}</span>
           </Button>
 
           <button 
@@ -106,8 +143,30 @@ export default function Navbar() {
             ))}
             <Button onClick={() => scrollTo("contact")} className="w-full gap-2 mt-2">
               <PhoneCall className="w-4 h-4" />
-              <span>تواصل معنا</span>
+              <span>{t.nav.contactUs}</span>
             </Button>
+            {/* Language Toggle in Mobile Menu */}
+            <div className="flex items-center justify-between p-3 rounded-lg border border-border/50 mt-2">
+              <span className="text-sm font-semibold text-foreground/80">اللغة / Language</span>
+              <div className="flex gap-2">
+                <Button
+                  variant={language === 'ar' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setLanguage('ar')}
+                  className="px-3"
+                >
+                  ع
+                </Button>
+                <Button
+                  variant={language === 'en' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => setLanguage('en')}
+                  className="px-3"
+                >
+                  EN
+                </Button>
+              </div>
+            </div>
           </div>
         </motion.div>
       )}

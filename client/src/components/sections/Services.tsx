@@ -9,54 +9,56 @@ import {
   BadgeDollarSign 
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 import madenahImage from "@assets/madenah.webp";
 
-const services = [
-  {
-    title: "حجوزات طيران",
-    description: "أفضل الأسعار عالمياً ومحلياً على كافة خطوط الطيران الموثوقة.",
-    icon: Plane,
-    image: "https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=800&auto=format&fit=crop", // landing page airplane wing view
-  },
-  {
-    title: "تأشيرات Visa",
-    description: "محاكاة وتحضير أوراقك للسفارات (شنغن، الخليج، وغيرها) باحترافية عالية.",
-    icon: FileText,
-    image: "", // passport and boarding pass
-  },
-  {
-    title: "رحلات وعمرة",
-    description: "برامج سياحية متكاملة ورحلات منظمة، بالإضافة لرحلات العمرة الميسرة.",
-    icon: Globe2,
-    image: madenahImage, // mecca or beautiful destination
-  },
-  {
-    title: "خدمات التأمين (Insurance)",
-    description: "تأمين سفر، منشآت، وغيرها. تغطية شاملة لأجل راحة بالك أثناء تنقلك.",
-    icon: ShieldCheck,
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop", // umbrella and family concept
-  },
-  {
-    title: "قبولات جامعية",
-    description: "نوجه الطلاب لفرص التعليم في الخارج ونساعدهم في الحصول على القبولات.",
-    icon: GraduationCap,
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop", // university students
-  },
-  {
-    title: "دعوات رسمية",
-    description: "تجهيز دعوات رسمية لزيارات عائلية أو أعمال لتسهيل إجراءات السفر.",
-    icon: MailPlus,
-    image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=800&auto=format&fit=crop", // formal letter signing
-  },
-  {
-    title: "خدمات OMT",
-    description: "خدمات سريعة وموثوقة لتحويل وسحب الأموال عبر شبكة OMT.",
-    icon: BadgeDollarSign,
-    image: "https://images.unsplash.com/photo-1580519542014-27034f0c96fb?q=80&w=800&auto=format&fit=crop", // money transfer concept
-  },
-];
-
 export default function Services() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      title: t.services.items.flights.title,
+      description: t.services.items.flights.description,
+      icon: Plane,
+      image: "https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      title: t.services.items.visas.title,
+      description: t.services.items.visas.description,
+      icon: FileText,
+      image: "",
+    },
+    {
+      title: t.services.items.trips.title,
+      description: t.services.items.trips.description,
+      icon: Globe2,
+      image: madenahImage,
+    },
+    {
+      title: t.services.items.insurance.title,
+      description: t.services.items.insurance.description,
+      icon: ShieldCheck,
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      title: t.services.items.university.title,
+      description: t.services.items.university.description,
+      icon: GraduationCap,
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      title: t.services.items.invitations.title,
+      description: t.services.items.invitations.description,
+      icon: MailPlus,
+      image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      title: t.services.items.omt.title,
+      description: t.services.items.omt.description,
+      icon: BadgeDollarSign,
+      image: "https://images.unsplash.com/photo-1580519542014-27034f0c96fb?q=80&w=800&auto=format&fit=crop",
+    },
+  ];
   return (
     <section id="services" className="py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +70,7 @@ export default function Services() {
               viewport={{ once: true }}
               className="text-primary font-bold tracking-wide uppercase text-sm mb-3"
             >
-              باقة متكاملة
+              {t.services.badge}
             </motion.h2>
             <motion.h3 
               initial={{ opacity: 0, x: -20 }}
@@ -77,7 +79,7 @@ export default function Services() {
               transition={{ delay: 0.1 }}
               className="text-3xl md:text-5xl font-bold"
             >
-              اكتشف خدماتنا
+              {t.services.title}
             </motion.h3>
           </div>
           <motion.p 
@@ -87,7 +89,7 @@ export default function Services() {
             transition={{ delay: 0.2 }}
             className="text-muted-foreground md:w-1/3 leading-relaxed"
           >
-            نقدم مجموعة واسعة من الخدمات لتلبية كافة احتياجاتك المتعلقة بالسفر والمعاملات الرسمية تحت سقف واحد.
+            {t.services.description}
           </motion.p>
         </div>
 

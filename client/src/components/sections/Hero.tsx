@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, MapPin, Calendar, Users } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
   const scrollToServices = () => {
     document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -28,7 +30,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="inline-block py-1 px-3 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-primary-foreground font-semibold text-sm mb-6">
-              مكتب ريم للسياحة والسفر
+              {t.hero.badge}
             </span>
           </motion.div>
 
@@ -38,8 +40,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl md:text-7xl font-black mb-6 leading-tight"
           >
-            جسرك المحلي <br/>
-            <span className="text-secondary">للعالم</span>
+            {t.hero.title} <br/>
+            <span className="text-secondary">{t.hero.titleHighlight}</span>
           </motion.h1>
 
           <motion.p 
@@ -48,7 +50,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl text-gray-200 mb-10 font-light"
           >
-            سافر بذكاء، أمان، وراحة. خطط لرحلتك القادمة معنا واستمتع بتجربة لا تنسى.
+            {t.hero.description}
           </motion.p>
 
           <motion.div 
@@ -62,7 +64,7 @@ export default function Hero() {
               className="rounded-full px-8 py-6 text-lg bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/30 hover:-translate-y-1 transition-all"
               onClick={scrollToServices}
             >
-              اكتشف خدماتنا
+              {t.hero.discoverServices}
             </Button>
             <Button 
               size="lg" 
@@ -70,7 +72,7 @@ export default function Hero() {
               className="rounded-full px-8 py-6 text-lg bg-white/10 backdrop-blur-md border-white/30 text-white hover:bg-white/20 hover:text-white transition-all"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
-              احجز الآن
+              {t.hero.bookNow}
             </Button>
           </motion.div>
         </div>
@@ -86,16 +88,16 @@ export default function Hero() {
         <div className="flex items-center gap-3 text-white">
           <MapPin className="w-5 h-5 text-secondary" />
           <div className="flex flex-col text-center">
-            <span className="text-xs text-gray-400">الموقع</span>
-            <span className="text-sm font-semibold">طرابلس، جبل البداوي</span>
+            <span className="text-xs text-gray-400">{t.hero.location}</span>
+            <span className="text-sm font-semibold">{t.hero.locationValue}</span>
           </div>
         </div>
         <div className="w-px h-10 bg-white/20"></div>
         <div className="flex items-center gap-3 text-white">
           <Calendar className="w-5 h-5 text-secondary" />
           <div className="flex flex-col text-center">
-            <span className="text-xs text-gray-400">الخدمة</span>
-            <span className="text-sm font-semibold">متابعة 24/24 ساعة</span>
+            <span className="text-xs text-gray-400">{t.hero.service}</span>
+            <span className="text-sm font-semibold">{t.hero.serviceValue}</span>
           </div>
         </div>
       </motion.div>

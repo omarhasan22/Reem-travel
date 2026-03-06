@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { Quote as QuoteIcon } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Quote() {
+  const { t } = useLanguage();
   return (
     <section className="py-24 relative overflow-hidden bg-primary text-primary-foreground">
       {/* Abstract Background pattern */}
@@ -27,7 +29,7 @@ export default function Quote() {
           transition={{ delay: 0.2 }}
           className="text-2xl md:text-4xl font-semibold leading-relaxed md:leading-tight mb-12"
         >
-          "تيسير رحلاتكم وتذليل الصعاب أمامكم هو لب رسالتنا. خبرتنا الممتدة في شؤون السفر والتأشيرات، خصوصاً لأبناء جاليتنا هي ضمانتنا لتوفير وقتكم وجهدكم. ثقتكم بنا هي شرف نعتز به."
+          "{t.quote.text}"
         </motion.blockquote>
 
         <motion.div 
@@ -46,8 +48,8 @@ export default function Quote() {
             />
           </div>
           <div>
-            <div className="font-bold text-xl">محمد داوود</div>
-            <div className="text-primary-foreground/80 font-medium">مدير مكتب Reem Travel</div>
+            <div className="font-bold text-xl">{t.quote.author}</div>
+            <div className="text-primary-foreground/80 font-medium">Reem Travel Office Manager</div>
           </div>
         </motion.div>
       </div>

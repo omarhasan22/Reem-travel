@@ -3,6 +3,7 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 
@@ -15,15 +16,24 @@ function Router() {
   );
 }
 
+function AppContent() {
+  const { dir } = useLanguage();
+  
+  return (
+    <div dir={dir} className={dir === 'rtl' ? 'text-right' : 'text-left'}>
+      <Toaster />
+      <Router />
+    </div>
+  );
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        {/* Set layout to RTL for Arabic content */}
-        <div dir="rtl" className="text-right">
-          <Toaster />
-          <Router />
-        </div>
+        <LanguageProvider>
+          <AppContent />
+        </LanguageProvider>
       </TooltipProvider>
     </QueryClientProvider>
   );
