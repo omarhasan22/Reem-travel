@@ -9,6 +9,7 @@ import {
   BadgeDollarSign 
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import madenahImage from "@assets/madenah.webp";
 
 const services = [
   {
@@ -21,13 +22,13 @@ const services = [
     title: "تأشيرات Visa",
     description: "محاكاة وتحضير أوراقك للسفارات (شنغن، الخليج، وغيرها) باحترافية عالية.",
     icon: FileText,
-    image: "https://images.unsplash.com/photo-1559599101-f09722fb4948?q=80&w=800&auto=format&fit=crop", // passport and boarding pass
+    image: "", // passport and boarding pass
   },
   {
     title: "رحلات وعمرة",
     description: "برامج سياحية متكاملة ورحلات منظمة، بالإضافة لرحلات العمرة الميسرة.",
     icon: Globe2,
-    image: "https://images.unsplash.com/photo-1565552643983-665ab27d610c?q=80&w=800&auto=format&fit=crop", // mecca or beautiful destination
+    image: madenahImage, // mecca or beautiful destination
   },
   {
     title: "خدمات التأمين (Insurance)",

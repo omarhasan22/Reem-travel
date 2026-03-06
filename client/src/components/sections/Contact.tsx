@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MapPin, Phone, Mail, Send, QrCode } from "lucide-react";
-import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
-import { useCreateContactMessage } from "@/hooks/use-contact";
+import { useCreateContactMessage, type ContactInput } from "@/hooks/use-contact";
+import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,11 +18,18 @@ import {
 } from "@/components/ui/form";
 import { Card, CardContent } from "@/components/ui/card";
 
+const contactFormSchema = z.object({
+  name: z.string().min(1, "الاسم مطلوب"),
+  email: z.string().email("يرجى إدخال بريد إلكتروني صحيح"),
+  phone: z.string().optional(),
+  message: z.string().min(1, "الرسالة مطلوبة"),
+});
+
 export default function Contact() {
   const mutation = useCreateContactMessage();
 
-  const form = useForm<InsertContactMessage>({
-    resolver: zodResolver(insertContactMessageSchema),
+  const form = useForm<ContactInput>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -31,12 +38,9 @@ export default function Contact() {
     },
   });
 
-  const onSubmit = (data: InsertContactMessage) => {
-    mutation.mutate(data, {
-      onSuccess: () => {
-        form.reset();
-      }
-    });
+  const onSubmit = (data: ContactInput) => {
+    mutation.mutate(data);
+    form.reset();
   };
 
   return (
@@ -90,7 +94,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h5 className="font-semibold text-lg">الهاتف</h5>
-                  <p className="text-muted-foreground mt-1" dir="ltr">+961 XX XXX XXX</p>
+                  <p className="text-muted-foreground mt-1" dir="ltr">+961 81 821 751</p>
                 </div>
               </div>
 
@@ -113,9 +117,8 @@ export default function Contact() {
                 <h5 className="font-bold text-lg mb-2">Scan & Contact Us</h5>
                 <p className="text-sm text-muted-foreground mb-4">امسح الرمز للتواصل المباشر معنا عبر الواتساب</p>
                 <div className="bg-white p-4 rounded-xl inline-block shadow-inner border">
-                  {/* Placeholder for real QR Code image */}
                   <img 
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Contact%20Reem%20Travel`} 
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/96181821751`} 
                     alt="QR Code" 
                     className="w-32 h-32"
                   />

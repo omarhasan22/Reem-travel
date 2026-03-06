@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { PlaneTakeoff, Menu, X, PhoneCall } from "lucide-react";
+import { Menu, X, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImage from "@assets/logo.jpeg";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,9 +43,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollTo("home")}>
-          <div className="bg-primary p-2 rounded-xl text-primary-foreground shadow-lg shadow-primary/30">
-            <PlaneTakeoff className="w-6 h-6 flip-icon" />
-          </div>
+          <img 
+            src={logoImage} 
+            alt="Reem Travel Logo" 
+            className="h-12 w-auto object-contain"
+          />
           <div className="flex flex-col">
             <span className="font-brand font-bold text-2xl leading-none text-foreground tracking-tight">Reem Travel</span>
             <span className="text-[10px] text-muted-foreground leading-none font-semibold">للسياحة والسفر</span>

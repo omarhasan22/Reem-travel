@@ -1,4 +1,4 @@
-import { PlaneTakeoff, Heart } from "lucide-react";
+import logoImage from "@assets/logo.jpeg";
 
 export default function Footer() {
   return (
@@ -7,9 +7,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           
           <div className="flex items-center gap-3">
-            <div className="bg-primary/20 p-2 rounded-xl text-primary">
-              <PlaneTakeoff className="w-6 h-6 flip-icon text-white" />
-            </div>
+            <img 
+              src={logoImage} 
+              alt="Reem Travel Logo" 
+              className="h-10 w-auto object-contain"
+            />
             <div className="flex flex-col text-white">
               <span className="font-brand font-bold text-xl leading-none tracking-tight">Reem Travel</span>
               <span className="text-[10px] text-gray-400 leading-none font-semibold">سافر بذكاء، أمان، وراحة</span>
@@ -27,9 +29,6 @@ export default function Footer() {
         
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>© {new Date().getFullYear()} مكتب ريم للسياحة والسفر. جميع الحقوق محفوظة.</p>
-          <p className="flex items-center gap-1">
-            تم التطوير بحب <Heart className="w-4 h-4 text-red-500 fill-red-500 mx-1" /> لخدمتكم
-          </p>
         </div>
       </div>
     </footer>

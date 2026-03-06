@@ -85,7 +85,7 @@ export default function Hero() {
       >
         <div className="flex items-center gap-3 text-white">
           <MapPin className="w-5 h-5 text-secondary" />
-          <div className="flex flex-col">
+          <div className="flex flex-col text-center">
             <span className="text-xs text-gray-400">الموقع</span>
             <span className="text-sm font-semibold">طرابلس، جبل البداوي</span>
           </div>
@@ -93,7 +93,7 @@ export default function Hero() {
         <div className="w-px h-10 bg-white/20"></div>
         <div className="flex items-center gap-3 text-white">
           <Calendar className="w-5 h-5 text-secondary" />
-          <div className="flex flex-col">
+          <div className="flex flex-col text-center">
             <span className="text-xs text-gray-400">الخدمة</span>
             <span className="text-sm font-semibold">متابعة 24/24 ساعة</span>
           </div>
