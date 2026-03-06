@@ -6,7 +6,7 @@ import path from "path";
 // In development: use '/' for local server
 // In production: use '/Reem-travel/' for GitHub Pages
 // Or override via environment variable: VITE_BASE_PATH
-const basePath = process.env.VITE_BASE_PATH || (import.meta.env.PROD ? '/Reem-travel/' : '/');
+const basePath = '/Reem-travel/'
 
 export default defineConfig({
   base: basePath,
