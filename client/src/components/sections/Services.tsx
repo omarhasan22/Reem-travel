@@ -15,50 +15,50 @@ import madenahImage from "@assets/madenah.webp";
 export default function Services() {
   const { t } = useLanguage();
 
-  const services = [
-    {
+const services = [
+  {
       title: t.services.items.flights.title,
       description: t.services.items.flights.description,
-      icon: Plane,
+    icon: Plane,
       image: "https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=800&auto=format&fit=crop",
-    },
-    {
+  },
+  {
       title: t.services.items.visas.title,
       description: t.services.items.visas.description,
-      icon: FileText,
+    icon: FileText,
       image: "",
-    },
-    {
+  },
+  {
       title: t.services.items.trips.title,
       description: t.services.items.trips.description,
-      icon: Globe2,
+    icon: Globe2,
       image: madenahImage,
-    },
-    {
+  },
+  {
       title: t.services.items.insurance.title,
       description: t.services.items.insurance.description,
-      icon: ShieldCheck,
+    icon: ShieldCheck,
       image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop",
-    },
-    {
+  },
+  {
       title: t.services.items.university.title,
       description: t.services.items.university.description,
-      icon: GraduationCap,
+    icon: GraduationCap,
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop",
-    },
-    {
+  },
+  {
       title: t.services.items.invitations.title,
       description: t.services.items.invitations.description,
-      icon: MailPlus,
+    icon: MailPlus,
       image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=800&auto=format&fit=crop",
-    },
-    {
+  },
+  {
       title: t.services.items.omt.title,
       description: t.services.items.omt.description,
-      icon: BadgeDollarSign,
+    icon: BadgeDollarSign,
       image: "https://images.unsplash.com/photo-1580519542014-27034f0c96fb?q=80&w=800&auto=format&fit=crop",
-    },
-  ];
+  },
+];
   return (
     <section id="services" className="py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

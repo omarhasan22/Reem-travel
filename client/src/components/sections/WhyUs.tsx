@@ -6,36 +6,36 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export default function WhyUs() {
   const { t } = useLanguage();
 
-  const features = [
-    {
-      icon: Clock,
+const features = [
+  {
+    icon: Clock,
       title: t.whyUs.features.support.title,
       description: t.whyUs.features.support.description,
-      color: "text-blue-500",
-      bg: "bg-blue-50",
-    },
-    {
-      icon: Tag,
+    color: "text-blue-500",
+    bg: "bg-blue-50",
+  },
+  {
+    icon: Tag,
       title: t.whyUs.features.prices.title,
       description: t.whyUs.features.prices.description,
-      color: "text-green-500",
-      bg: "bg-green-50",
-    },
-    {
-      icon: FileCheck2,
+    color: "text-green-500",
+    bg: "bg-green-50",
+  },
+  {
+    icon: FileCheck2,
       title: t.whyUs.features.visas.title,
       description: t.whyUs.features.visas.description,
-      color: "text-purple-500",
-      bg: "bg-purple-50",
-    },
-    {
-      icon: Building2,
+    color: "text-purple-500",
+    bg: "bg-purple-50",
+  },
+  {
+    icon: Building2,
       title: t.whyUs.features.location.title,
       description: t.whyUs.features.location.description,
-      color: "text-orange-500",
-      bg: "bg-orange-50",
-    },
-  ];
+    color: "text-orange-500",
+    bg: "bg-orange-50",
+  },
+];
   return (
     <section id="about" className="py-24 bg-background relative overflow-hidden">
       {/* Decorative Blob */}
