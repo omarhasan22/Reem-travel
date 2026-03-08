@@ -12,7 +12,7 @@
       l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
       '/Reem-travel/' +
       l.pathname.split('/').slice(pathSegmentsToKeep).join('/').replace(/^\//, '') +
-      (l.search ? '&' + l.search.substring(1) : '') +
+      (l.search ? '?' + l.search.substring(1) : '') +
       l.hash
     );
   </script>
