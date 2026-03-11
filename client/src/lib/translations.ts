@@ -47,6 +47,12 @@ export const translations = {
           description: 'بخدمتكم بكل فخر واستعداد. نوفر عليكم عناء التنقل بوجودنا بالقرب منكم.',
         },
       },
+      stats: {
+        clients: 'عميل سعيد',
+        years: 'سنوات خبرة',
+        destinations: 'وجهة سفر',
+        support: 'متابعة مستمرة',
+      },
     },
     // Services
     services: {
@@ -174,6 +180,12 @@ export const translations = {
           title: 'The Only Office in Al-Badawi',
           description: 'At your service with pride and readiness. We save you the hassle of travel by being close to you.',
         },
+      },
+      stats: {
+        clients: 'Happy Clients',
+        years: 'Years Experience',
+        destinations: 'Destinations',
+        support: 'Ongoing Support',
       },
     },
     // Services

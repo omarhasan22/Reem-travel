@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, MapPin, Calendar, Users } from "lucide-react";
+import { ChevronDown, MapPin, Calendar, Plane } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+
+const bgPlanes = [
+  { top: "18%", left: "62%", size: 52, opacity: 0.07, rotate: -20, duration: 9, delay: 0, yRange: [-18, 6] },
+  { top: "58%", left: "78%", size: 30, opacity: 0.05, rotate: 15, duration: 12, delay: 3, yRange: [-10, 10] },
+  { top: "40%", left: "48%", size: 22, opacity: 0.04, rotate: -35, duration: 15, delay: 6, yRange: [-15, 5] },
+  { top: "75%", left: "55%", size: 18, opacity: 0.05, rotate: 10, duration: 11, delay: 1.5, yRange: [-8, 12] },
+];
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -21,6 +28,19 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
       </div>
+
+      {/* Floating Travel Planes */}
+      {bgPlanes.map((p, i) => (
+        <motion.div
+          key={i}
+          animate={{ y: p.yRange, x: [0, 8, 0] }}
+          transition={{ duration: p.duration, repeat: Infinity, ease: "easeInOut", delay: p.delay }}
+          className="absolute pointer-events-none z-[1]"
+          style={{ top: p.top, left: p.left, opacity: p.opacity }}
+        >
+          <Plane style={{ width: p.size, height: p.size, transform: `rotate(${p.rotate}deg)` }} className="text-white" />
+        </motion.div>
+      ))}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-2xl text-white">
