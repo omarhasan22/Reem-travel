@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useLanguage } from "@/contexts/LanguageContext";
-import logoImage from "@assets/logo.jpeg";
+import logoImage from "@assets/logo.png";
 
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();

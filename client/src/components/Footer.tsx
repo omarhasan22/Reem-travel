@@ -1,4 +1,4 @@
-import logoImage from "@assets/logo.jpeg";
+import logoImage from "@assets/logo.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
