@@ -22,6 +22,13 @@ const servicesBgIcons = [
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import madenahImage from "@assets/madenah.webp";
+import insurance from "@assets/images/insurance.avif";
+import un from "@assets/images/un.jfif";
+import invitations from "@assets/images/invitations.avif";
+import omt from "@assets/images/omt.png";
+import plan from "@assets/images/plan.avif";
+import visa from "@assets/images/visa.jpg";
+
 
 const containerVariants = {
   hidden: {},
@@ -47,13 +54,13 @@ const services = [
       title: t.services.items.flights.title,
       description: t.services.items.flights.description,
     icon: Plane,
-      image: "https://images.unsplash.com/photo-1542296332-2e4473faf563?q=80&w=800&auto=format&fit=crop",
+      image: plan,
   },
   {
       title: t.services.items.visas.title,
       description: t.services.items.visas.description,
     icon: FileText,
-      image: "",
+      image: visa,
   },
   {
       title: t.services.items.trips.title,
@@ -65,25 +72,25 @@ const services = [
       title: t.services.items.insurance.title,
       description: t.services.items.insurance.description,
     icon: ShieldCheck,
-      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop",
+      image: insurance,
   },
   {
       title: t.services.items.university.title,
       description: t.services.items.university.description,
     icon: GraduationCap,
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop",
+      image:un,
   },
   {
       title: t.services.items.invitations.title,
       description: t.services.items.invitations.description,
     icon: MailPlus,
-      image: "https://images.unsplash.com/photo-1554774853-719586f82d77?q=80&w=800&auto=format&fit=crop",
+      image: invitations,
   },
   {
       title: t.services.items.omt.title,
       description: t.services.items.omt.description,
     icon: BadgeDollarSign,
-      image: "https://images.unsplash.com/photo-1580519542014-27034f0c96fb?q=80&w=800&auto=format&fit=crop",
+      image: omt,
   },
 ];
   return (

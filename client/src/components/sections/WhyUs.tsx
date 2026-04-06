@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Clock, Tag, FileCheck2, Building2, Users, Award, MapPin, Headphones, Plane, Globe2, Compass, Navigation } from "lucide-react";
+import { Clock, Tag, FileCheck2, Users, Award, MapPin, Headphones, Plane, Globe2, Compass, Navigation } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useCounter } from "@/hooks/use-counter";
@@ -60,21 +60,13 @@ export default function WhyUs() {
       bg: "bg-purple-50",
       gradient: "from-purple-500 to-purple-400",
     },
-    {
-      icon: Building2,
-      title: t.whyUs.features.location.title,
-      description: t.whyUs.features.location.description,
-      color: "text-orange-500",
-      bg: "bg-orange-50",
-      gradient: "from-orange-500 to-orange-400",
-    },
   ];
 
   const stats = [
     { icon: Users, target: 500, suffix: "+", label: t.whyUs.stats.clients },
-    { icon: Award, target: 7, suffix: "+", label: t.whyUs.stats.years },
+    { icon: Award, target: 3, suffix: "+", label: t.whyUs.stats.years },
     { icon: MapPin, target: 15, suffix: "+", label: t.whyUs.stats.destinations },
-    { icon: Headphones, target: 24, suffix: "/7", label: t.whyUs.stats.support },
+    { icon: Headphones, target: 24, suffix: "/24", label: t.whyUs.stats.support },
   ];
 
   return (
@@ -156,7 +148,7 @@ export default function WhyUs() {
         </div>
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}

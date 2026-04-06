@@ -4,7 +4,7 @@ import { Language, translations } from '@/lib/translations';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: typeof translations.ar;
+  t: (typeof translations)[Language];
   dir: 'rtl' | 'ltr';
 }
 

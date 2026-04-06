@@ -107,7 +107,7 @@ export default function Quote() {
           </motion.div>
           <div>
             <div className="font-bold text-xl">{t.quote.author}</div>
-            <div className="text-primary-foreground/80 font-medium">Reem Travel Office Manager</div>
+            <div className="text-primary-foreground/80 font-medium">{t.quote.role}</div>
           </div>
         </motion.div>
       </div>

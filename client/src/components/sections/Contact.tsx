@@ -66,7 +66,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: t.contact.phone,
-      value: "+961 81 821 751",
+      value: "+961 81 821 751\n+961 06 390 751",
       dir: "ltr" as const,
       flip: true,
     },

@@ -26,9 +26,9 @@ export const translations = {
     },
     // WhyUs
     whyUs: {
-      badge: 'لماذا ريم ترافل؟',
+      badge: 'لماذا نحن',
       title: 'نحن أكثر من مجرد مكتب سفر',
-      description: 'نحن شركائكم في كل رحلة... نفهم احتياجاتكم لأننا جزء منكم. خطط لسفرتك القادمة معنا واستمتع بتجربة لا تنسى.',
+      description: 'نحن شركاؤكم في كل رحلة. نفهم احتياجاتكم لأننا جزء منكم. خطط لسفرتك القادمة معنا واستمتع بتجربة لا تنسى.',
       features: {
         support: {
           title: 'متابعة 24/24',
@@ -41,10 +41,6 @@ export const translations = {
         visas: {
           title: 'خبرة في التأشيرات',
           description: 'خبرة خاصة في معاملات التأشيرات للفلسطينيين، السوريين، واللبنانيين لمختلف الوجهات.',
-        },
-        location: {
-          title: 'المكتب الوحيد في البداوي',
-          description: 'بخدمتكم بكل فخر واستعداد. نوفر عليكم عناء التنقل بوجودنا بالقرب منكم.',
         },
       },
       stats: {
@@ -94,6 +90,7 @@ export const translations = {
     quote: {
       text: 'تيسير رحلاتكم وتذليل الصعاب أمامكم هو لب رسالتنا. خبرتنا الممتدة في شؤون السفر والتأشيرات، خصوصاً لأبناء جاليتنا هي ضمانتنا لتوفير وقتكم وجهدكم. ثقتكم بنا هي شرف نعتز به.',
       author: 'فريق ريم ترافل',
+      role: 'المدير العام محمد داوود',
     },
     // Contact
     contact: {
@@ -156,16 +153,16 @@ export const translations = {
       location: 'Location',
       locationValue: 'Tripoli, Jabal Al-Badawi',
       service: 'Service',
-      serviceValue: '24/7 Follow-up',
+      serviceValue: '24/24 Follow-up',
     },
     // WhyUs
     whyUs: {
-      badge: 'Why Reem Travel?',
+      badge: 'Why Us',
       title: 'We are more than just a travel agency',
-      description: 'We are your partners in every journey... We understand your needs because we are part of you. Plan your next trip with us and enjoy an unforgettable experience.',
+      description: 'We are your partners in every journey. We understand your needs because we are part of you. Plan your next trip with us and enjoy an unforgettable experience.',
       features: {
         support: {
-          title: '24/7 Follow-up',
+          title: '24/24 Follow-up',
           description: 'Contact us anytime. Our team is always available to answer your inquiries and follow up on your trip step by step.',
         },
         prices: {
@@ -175,10 +172,6 @@ export const translations = {
         visas: {
           title: 'Visa Expertise',
           description: 'Special expertise in visa transactions for Palestinians, Syrians, and Lebanese to various destinations.',
-        },
-        location: {
-          title: 'The Only Office in Al-Badawi',
-          description: 'At your service with pride and readiness. We save you the hassle of travel by being close to you.',
         },
       },
       stats: {
@@ -228,6 +221,7 @@ export const translations = {
     quote: {
       text: 'Facilitating your trips and removing obstacles is the core of our mission. Our extensive experience in travel and visa matters, especially for our community members, is our guarantee to save your time and effort. Your trust in us is an honor we cherish.',
       author: 'Reem Travel Team',
+      role: 'General Manager Mohammad Dawoud',
     },
     // Contact
     contact: {
