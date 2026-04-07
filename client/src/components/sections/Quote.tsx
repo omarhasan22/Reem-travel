@@ -2,15 +2,16 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Quote as QuoteIcon, Plane, Globe2, Compass, Navigation, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import profile from "@/assets/images/profile.png";
 
 const travelParticles = [
   { Icon: Plane,      top: "8%",  left: "8%",  size: 22, opacity: 0.15, rotate: -20, duration: 6,  delay: 0 },
   { Icon: Globe2,     top: "12%", left: "82%", size: 28, opacity: 0.12, rotate: 0,   duration: 8,  delay: 1 },
   { Icon: Compass,    top: "55%", left: "5%",  size: 20, opacity: 0.13, rotate: 15,  duration: 9,  delay: 2 },
-  { Icon: Navigation, top: "70%", left: "88%", size: 18, opacity: 0.12, rotate: 30,  duration: 7,  delay: 0.5 },
-  { Icon: Plane,      top: "40%", left: "92%", size: 16, opacity: 0.10, rotate: 10,  duration: 11, delay: 3 },
-  { Icon: MapPin,     top: "85%", left: "12%", size: 16, opacity: 0.12, rotate: 0,   duration: 8,  delay: 1.5 },
-  { Icon: Globe2,     top: "85%", left: "60%", size: 20, opacity: 0.10, rotate: 0,   duration: 10, delay: 2.5 },
+  // { Icon: Navigation, top: "70%", left: "88%", size: 18, opacity: 0.12, rotate: 30,  duration: 7,  delay: 0.5 },
+  // { Icon: Plane,      top: "40%", left: "92%", size: 16, opacity: 0.10, rotate: 10,  duration: 11, delay: 3 },
+  // { Icon: MapPin,     top: "85%", left: "12%", size: 16, opacity: 0.12, rotate: 0,   duration: 8,  delay: 1.5 },
+  // { Icon: Globe2,     top: "85%", left: "60%", size: 20, opacity: 0.10, rotate: 0,   duration: 10, delay: 2.5 },
   { Icon: Compass,    top: "25%", left: "48%", size: 14, opacity: 0.10, rotate: -10, duration: 12, delay: 4 },
 ];
 
@@ -100,14 +101,14 @@ export default function Quote() {
             className="w-20 h-20 rounded-full border-4 border-white/30 overflow-hidden shadow-2xl"
           >
             <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop"
+              src={profile}
               alt="Mohammad Daoud"
               className="w-full h-full object-cover"
             />
           </motion.div>
           <div>
             <div className="font-bold text-xl">{t.quote.author}</div>
-            <div className="text-primary-foreground/80 font-medium">{t.quote.role}</div>
+            <div className=" font-bold text-xl">{t.quote.role}</div>
           </div>
         </motion.div>
       </div>

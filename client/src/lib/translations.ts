@@ -16,7 +16,7 @@ export const translations = {
       badge: 'مكتب ريم للسياحة والسفر',
       title: 'جسرك المحلي',
       titleHighlight: 'للعالم',
-      description: 'سافر بذكاء، أمان، وراحة. خطط لرحلتك القادمة معنا واستمتع بتجربة لا تنسى.',
+      description: 'سافر بذكاء، أمان، وراحة. خطط لرحلتك القادمة معنا واستمتع بتجربة لا تنسى',
       discoverServices: 'اكتشف خدماتنا',
       bookNow: 'احجز الآن',
       location: 'الموقع',
@@ -28,19 +28,19 @@ export const translations = {
     whyUs: {
       badge: 'لماذا نحن',
       title: 'نحن أكثر من مجرد مكتب سفر',
-      description: 'نحن شركاؤكم في كل رحلة. نفهم احتياجاتكم لأننا جزء منكم. خطط لسفرتك القادمة معنا واستمتع بتجربة لا تنسى.',
+      description: 'نحن شركاؤكم في كل رحلة. نفهم احتياجاتكم لأننا جزء منكم. خطط لسفرتك القادمة معنا واستمتع بتجربة لا تنسى',
       features: {
         support: {
           title: 'متابعة 24/24',
-          description: 'اتصل بنا بأي وقت. فريقنا متواجد دائماً للرد على استفساراتك ومتابعة رحلتك خطوة بخطوة.',
+          description: 'اتصل بنا بأي وقت. فريقنا متواجد دائماً للرد على استفساراتك ومتابعة رحلتك خطوة بخطوة',
         },
         prices: {
           title: 'أسعار مناسبة',
-          description: 'سفر مضمون بسعر مناسب. نحرص دائماً على تقديم أفضل العروض والخيارات الاقتصادية.',
+          description: 'سفر مضمون بسعر مناسب. نحرص دائماً على تقديم أفضل العروض والخيارات الاقتصادية',
         },
         visas: {
           title: 'خبرة في التأشيرات',
-          description: 'خبرة خاصة في معاملات التأشيرات للفلسطينيين، السوريين، واللبنانيين لمختلف الوجهات.',
+          description: 'خبرة خاصة في معاملات التأشيرات للفلسطينيين، السوريين، واللبنانيين لمختلف الوجهات',
         },
       },
       stats: {
@@ -54,43 +54,43 @@ export const translations = {
     services: {
       badge: 'باقة متكاملة',
       title: 'اكتشف خدماتنا',
-      description: 'نقدم مجموعة واسعة من الخدمات لتلبية كافة احتياجاتك المتعلقة بالسفر والمعاملات الرسمية تحت سقف واحد.',
+      description: 'نقدم مجموعة واسعة من الخدمات لتلبية كافة احتياجاتك المتعلقة بالسفر والمعاملات الرسمية تحت سقف واحد',
       items: {
         flights: {
           title: 'حجوزات طيران',
-          description: 'أفضل الأسعار عالمياً ومحلياً على كافة خطوط الطيران الموثوقة.',
+          description: 'أفضل الأسعار عالمياً ومحلياً على كافة خطوط الطيران الموثوقة',
         },
         visas: {
           title: 'تأشيرات Visa',
-          description: 'محاكاة وتحضير أوراقك للسفارات (شنغن، الخليج، وغيرها) باحترافية عالية.',
+          description: 'محاكاة وتحضير أوراقك للسفارات (شنغن، الخليج، وغيرها) باحترافية عالية',
         },
         trips: {
           title: 'رحلات وعمرة',
-          description: 'برامج سياحية متكاملة ورحلات منظمة، بالإضافة لرحلات العمرة الميسرة.',
+          description: 'برامج سياحية متكاملة ورحلات منظمة، بالإضافة لرحلات العمرة الميسرة',
         },
         insurance: {
           title: 'خدمات التأمين (Insurance)',
-          description: 'تأمين سفر، منشآت، وغيرها. تغطية شاملة لأجل راحة بالك أثناء تنقلك.',
+          description: 'تأمين سفر، منشآت، وغيرها. تغطية شاملة لأجل راحة بالك أثناء تنقلك',
         },
         university: {
           title: 'قبولات جامعية',
-          description: 'نوجه الطلاب لفرص التعليم في الخارج ونساعدهم في الحصول على القبولات.',
+          description: 'نوجه الطلاب لفرص التعليم في الخارج ونساعدهم في الحصول على القبولات',
         },
         invitations: {
           title: 'دعوات رسمية',
-          description: 'تجهيز دعوات رسمية لزيارات عائلية أو أعمال لتسهيل إجراءات السفر.',
+          description: 'تجهيز دعوات رسمية لزيارات عائلية أو أعمال لتسهيل إجراءات السفر',
         },
         omt: {
           title: 'خدمات OMT',
-          description: 'خدمات سريعة وموثوقة لتحويل وسحب الأموال عبر شبكة OMT.',
+          description: 'خدمات سريعة وموثوقة لتحويل وسحب الأموال عبر شبكة OMT',
         },
       },
     },
     // Quote
     quote: {
-      text: 'تيسير رحلاتكم وتذليل الصعاب أمامكم هو لب رسالتنا. خبرتنا الممتدة في شؤون السفر والتأشيرات، خصوصاً لأبناء جاليتنا هي ضمانتنا لتوفير وقتكم وجهدكم. ثقتكم بنا هي شرف نعتز به.',
-      author: 'فريق ريم ترافل',
-      role: 'المدير العام محمد داوود',
+      text: 'تيسير رحلاتكم وتذليل الصعاب أمامكم هو لب رسالتنا. خبرتنا الممتدة في شؤون السفر والتأشيرات، خصوصاً لأبناء جاليتنا هي ضمانتنا لتوفير وقتكم وجهدكم. ثقتكم بنا هي شرف نعتز به',
+      author: 'المدير العام لريم ترافيل',
+      role: 'محمد داوود',
     },
     // Contact
     contact: {
@@ -115,7 +115,7 @@ export const translations = {
         messagePlaceholder: 'كيف يمكننا مساعدتك؟',
         messageRequired: 'الرسالة مطلوبة',
         send: 'إرسال الرسالة',
-        sending: 'جاري الإرسال...',
+        sending: 'جاري الإرسال..',
       },
       qr: {
         title: 'Scan & Contact Us',
@@ -129,7 +129,7 @@ export const translations = {
       about: 'عن المكتب',
       services: 'الخدمات',
       contact: 'تواصل معنا',
-      copyright: 'جميع الحقوق محفوظة.',
+      copyright: 'جميع الحقوق محفوظة',
     },
   },
   en: {
@@ -147,7 +147,7 @@ export const translations = {
       badge: 'Reem Travel & Tourism Office',
       title: 'Your Local Bridge',
       titleHighlight: 'to the World',
-      description: 'Travel smart, safe, and comfortable. Plan your next trip with us and enjoy an unforgettable experience.',
+      description: 'Travel smart, safe, and comfortable. Plan your next trip with us and enjoy an unforgettable experience',
       discoverServices: 'Discover Our Services',
       bookNow: 'Book Now',
       location: 'Location',
@@ -159,19 +159,19 @@ export const translations = {
     whyUs: {
       badge: 'Why Us',
       title: 'We are more than just a travel agency',
-      description: 'We are your partners in every journey. We understand your needs because we are part of you. Plan your next trip with us and enjoy an unforgettable experience.',
+      description: 'We are your partners in every journey. We understand your needs because we are part of you. Plan your next trip with us and enjoy an unforgettable experience',
       features: {
         support: {
           title: '24/24 Follow-up',
-          description: 'Contact us anytime. Our team is always available to answer your inquiries and follow up on your trip step by step.',
+          description: 'Contact us anytime. Our team is always available to answer your inquiries and follow up on your trip step by step',
         },
         prices: {
           title: 'Affordable Prices',
-          description: 'Guaranteed travel at a reasonable price. We always strive to provide the best offers and economical options.',
+          description: 'Guaranteed travel at a reasonable price. We always strive to provide the best offers and economical options',
         },
         visas: {
           title: 'Visa Expertise',
-          description: 'Special expertise in visa transactions for Palestinians, Syrians, and Lebanese to various destinations.',
+          description: 'Special expertise in visa transactions for Palestinians, Syrians, and Lebanese to various destinations',
         },
       },
       stats: {
@@ -185,43 +185,43 @@ export const translations = {
     services: {
       badge: 'Complete Package',
       title: 'Discover Our Services',
-      description: 'We offer a wide range of services to meet all your travel and official transaction needs under one roof.',
+      description: 'We offer a wide range of services to meet all your travel and official transaction needs under one roof',
       items: {
         flights: {
           title: 'Flight Bookings',
-          description: 'Best prices globally and locally on all trusted airlines.',
+          description: 'Best prices globally and locally on all trusted airlines',
         },
         visas: {
           title: 'Visa Services',
-          description: 'Simulation and preparation of your documents for embassies (Schengen, Gulf, and others) with high professionalism.',
+          description: 'Simulation and preparation of your documents for embassies (Schengen, Gulf, and others) with high professionalism',
         },
         trips: {
           title: 'Trips & Umrah',
-          description: 'Complete tourist programs and organized trips, in addition to facilitated Umrah trips.',
+          description: 'Complete tourist programs and organized trips, in addition to facilitated Umrah trips',
         },
         insurance: {
           title: 'Insurance Services',
-          description: 'Travel insurance, facilities, and more. Comprehensive coverage for your peace of mind during your travels.',
+          description: 'Travel insurance, facilities, and more. Comprehensive coverage for your peace of mind during your travels',
         },
         university: {
           title: 'University Admissions',
-          description: 'We guide students to educational opportunities abroad and help them obtain admissions.',
+          description: 'We guide students to educational opportunities abroad and help them obtain admissions',
         },
         invitations: {
           title: 'Official Invitations',
-          description: 'Preparation of official invitations for family or business visits to facilitate travel procedures.',
+          description: 'Preparation of official invitations for family or business visits to facilitate travel procedures',
         },
         omt: {
           title: 'OMT Services',
-          description: 'Fast and reliable services for money transfer and withdrawal through the OMT network.',
+          description: 'Fast and reliable services for money transfer and withdrawal through the OMT network',
         },
       },
     },
     // Quote
     quote: {
-      text: 'Facilitating your trips and removing obstacles is the core of our mission. Our extensive experience in travel and visa matters, especially for our community members, is our guarantee to save your time and effort. Your trust in us is an honor we cherish.',
-      author: 'Reem Travel Team',
-      role: 'General Manager Mohammad Dawoud',
+      text: 'Facilitating your trips and removing obstacles is the core of our mission. Our extensive experience in travel and visa matters, especially for our community members, is our guarantee to save your time and effort. Your trust in us is an honor we cherish',
+      author: 'Reem Travel General Manager',
+      role: ' Mohammad Dawoud',
     },
     // Contact
     contact: {
@@ -246,7 +246,7 @@ export const translations = {
         messagePlaceholder: 'How can we help you?',
         messageRequired: 'Message is required',
         send: 'Send Message',
-        sending: 'Sending...',
+        sending: 'Sending..',
       },
       qr: {
         title: 'Scan & Contact Us',
@@ -260,7 +260,7 @@ export const translations = {
       about: 'About',
       services: 'Services',
       contact: 'Contact Us',
-      copyright: 'All rights reserved.',
+      copyright: 'All rights reserved',
     },
   },
 } as const;
