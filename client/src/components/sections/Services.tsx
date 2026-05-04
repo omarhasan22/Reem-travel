@@ -13,21 +13,21 @@ import {
 } from "lucide-react";
 
 const servicesBgIcons = [
-  { Icon: Plane,      top: "6%",  right: "4%", size: 64, opacity: 0.05, rotate: -18, duration: 10, delay: 0 },
-  { Icon: Globe2,     bottom: "8%", left: "3%", size: 72, opacity: 0.04, rotate: 0,   duration: 14, delay: 2 },
-  { Icon: Compass,    top: "50%", right: "2%", size: 40, opacity: 0.04, rotate: 20,  duration: 12, delay: 1 },
-  { Icon: Navigation, top: "30%", left: "2%", size: 28, opacity: 0.04, rotate: -10, duration: 9,  delay: 3 },
-  { Icon: MapPin,     bottom: "30%", right: "3%", size: 24, opacity: 0.04, rotate: 0, duration: 11, delay: 1.5 },
+  { Icon: Plane, top: "6%", right: "4%", size: 64, opacity: 0.05, rotate: -18, duration: 10, delay: 0 },
+  { Icon: Globe2, bottom: "8%", left: "3%", size: 72, opacity: 0.04, rotate: 0, duration: 14, delay: 2 },
+  { Icon: Compass, top: "50%", right: "2%", size: 40, opacity: 0.04, rotate: 20, duration: 12, delay: 1 },
+  { Icon: Navigation, top: "30%", left: "2%", size: 28, opacity: 0.04, rotate: -10, duration: 9, delay: 3 },
+  { Icon: MapPin, bottom: "30%", right: "3%", size: 24, opacity: 0.04, rotate: 0, duration: 11, delay: 1.5 },
 ];
 import { Card, CardContent } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import madenahImage from "@assets/madenah.webp";
-import insurance from "@assets/images/insurance.avif";
-import un from "@assets/images/un.jfif";
-import invitations from "@assets/images/invitations.avif";
-import omt from "@assets/images/omt.png";
-import plan from "@assets/images/plan.avif";
-import visa from "@assets/images/visa.jpg";
+import insurance from "@assets/images/insurance.webp";
+import un from "@assets/images/un.webp";
+import invitations from "@assets/images/invitations.webp";
+import omt from "@assets/images/omt.webp";
+import plan from "@assets/images/plan.webp";
+import visa from "@assets/images/visa.webp";
 
 
 const containerVariants = {
@@ -49,50 +49,50 @@ const itemVariants = {
 export default function Services() {
   const { t } = useLanguage();
 
-const services = [
-  {
+  const services = [
+    {
       title: t.services.items.flights.title,
       description: t.services.items.flights.description,
-    icon: Plane,
+      icon: Plane,
       image: plan,
-  },
-  {
+    },
+    {
       title: t.services.items.visas.title,
       description: t.services.items.visas.description,
-    icon: FileText,
+      icon: FileText,
       image: visa,
-  },
-  {
+    },
+    {
       title: t.services.items.trips.title,
       description: t.services.items.trips.description,
-    icon: Globe2,
+      icon: Globe2,
       image: madenahImage,
-  },
-  {
+    },
+    {
       title: t.services.items.insurance.title,
       description: t.services.items.insurance.description,
-    icon: ShieldCheck,
+      icon: ShieldCheck,
       image: insurance,
-  },
-  {
+    },
+    {
       title: t.services.items.university.title,
       description: t.services.items.university.description,
-    icon: GraduationCap,
-      image:un,
-  },
-  {
+      icon: GraduationCap,
+      image: un,
+    },
+    {
       title: t.services.items.invitations.title,
       description: t.services.items.invitations.description,
-    icon: MailPlus,
+      icon: MailPlus,
       image: invitations,
-  },
-  {
+    },
+    {
       title: t.services.items.omt.title,
       description: t.services.items.omt.description,
-    icon: BadgeDollarSign,
+      icon: BadgeDollarSign,
       image: omt,
-  },
-];
+    },
+  ];
   return (
     <section id="services" className="py-24 bg-muted/30 relative overflow-hidden">
       {/* Dot Pattern Background */}
